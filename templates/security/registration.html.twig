@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<style>
+    .form{ margin: 1em auto; max-width: 1000px; width: 95%; font: 18px/1.5 sans-serif; }
+    .button {margin-top:15px;}
+</style>
+
+<h2 style="text-align:center;padding-top:40px;">Vous souhaitez vous inscrire ?</h2>
+
+<div class="form">
+{{ form_start(form) }}
+{{ form_row(form.username, {'label':'nom d\'utilisateur','attr': {'placeholder':'Votre nom d\'utilisateur'}}) }}
+{{ form_row(form.email, {'label':'Adresse e-mail','attr': {'placeholder':'Votre adresse e-mail'}}) }}
+{{ form_row(form.password, {'label':'mot de passe','attr': {'placeholder':'**********'}}) }}
+{{ form_row(form.confirm_password, {'label':'confirmer le mot de passe','attr': {'placeholder':'**********'}}) }}
+<button type="submit" class=" button btn btn-success">Inscription</button>
+{{ form_end(form) }}
+</div>
+{% endblock %}

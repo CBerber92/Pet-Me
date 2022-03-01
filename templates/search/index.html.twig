@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page de recherche{% endblock %}
+
+{% block body %}
+<style>
+    .galerie{display:flex;flex-direction:row;justify-content:space-around;flex-wrap:wrap;}
+    .produit{width:30vw;background-color:#B75D69;color:white; text-align:center;border-radius:35px;margin-top:50px;padding-bottom:10px;}
+</style>
+<h2 style="padding:50px;text-align:center;">Nos petits chérubins :</h2>
+<ul class="galerie">
+
+{% for animal in animaux %}
+    
+    <li class="produit" style="">
+    <img href="img/{{animal.photo}}">
+    <h1>{{ animal.nom }}</h1>
+    <h2>{{ animal.espece }}</h2>
+    <p>{{ animal.race }} {{ animal.sex }} de {{ animal.age }}ans</p>
+    <p>Localisation : {{ animal.Localisation }}</p>
+    <a href="{{ path('show', {'id':animal.id})}}" class="btn btn-primary">En savoir plus</a>
+    </li>
+{% endfor %}
+</ul>
+
+{% endblock %}

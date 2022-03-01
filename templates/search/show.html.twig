@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page de recherche
+{% endblock %}
+
+{% block body %}
+	<style>
+		.animal {
+			text-align: center;
+		}
+
+        .info{
+    		background-color:#B75D69;color:white;
+			border-radius: 35px;
+            margin:150px 25vw;
+			padding-bottom: 10px;        
+        }
+        
+	</style>
+
+	<div class="animal">
+        <li class="info">
+		<img href="img/{{animal.photo}}">
+		<h1>{{ animal.nom }}</h1>
+		<h2>{{ animal.espece }}</h2>
+		<p>{{ animal.race }}
+			{{ animal.sex }}
+			de
+			{{ animal.age }}ans</p>
+		<p>Localisation :
+			{{ animal.Localisation }}</p>
+		<p>Description :
+			{{ animal.Description }}</p>
+        </li>
+	</div>
+{% endblock %}

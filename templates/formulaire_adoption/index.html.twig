@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Formulaire d'adoption{% endblock %}
+
+{% block body %}
+<style>
+    .form{ margin: 1em auto; max-width: 1000px; width: 95%; font: 18px/1.5 sans-serif; }
+</style>
+
+<h2 style="text-align:center;padding-top:40px;">Vous souhaitez faire adopter votre animal de compagnie ?</h2>
+<div class="form">
+{{form_start(formAnimal)}}
+
+{{form_row(formAnimal.Nom, {'attr':{'placeholder':"Nom de l'animal"}})}}
+{{form_row(formAnimal.classCategory, {'label':'Categorie',})}}
+{{form_row(formAnimal.Espece, {'attr':{'placeholder':"Espece"}})}}
+{{form_row(formAnimal.Race, {'attr':{'placeholder':"Race"}})}}
+{{form_row(formAnimal.Sex, {'attr':{'placeholder':"H ou F"}})}}
+{{form_row(formAnimal.Age, {'attr':{'placeholder':"Age"}})}}
+{{form_row(formAnimal.Localisation, {'attr':{'placeholder':"Localisation"}})}}
+{{form_row(formAnimal.Photo, {'attr':{'placeholder':"URL de l'image"}})}}
+{{form_row(formAnimal.Description, {'attr':{'placeholder':"Description de l'animal"}})}}
+
+{{form_widget(formAnimal)}}
+<br/>
+<button type="submit" class="btn btn-success">Envoyer</button>
+
+{{form_end(formAnimal)}}
+</div>
+{% endblock %}
